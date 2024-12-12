@@ -13,6 +13,8 @@ class SaleController extends Controller
         $validated = $request->validate([
             'fuel_tank_id' => 'required|exists:fuel_tanks,id',
             'amount' => 'required|numeric|min:1',
+            'payment_method' => 'nullable|string',
+            'transaction_reference' => 'nullable|string',
         ]);
 
         $fuelTank = FuelTank::findOrFail($validated['fuel_tank_id']);
@@ -21,6 +23,9 @@ class SaleController extends Controller
         if ($fuelTank->current_level < $validated['amount']) {
             return back()->with('error', 'Not enough fuel in tank');
         }
+
+        // Add user_id to validated data
+        $validated['user_id'] = auth()->id();
 
         // Create sale record
         Sale::create($validated);
