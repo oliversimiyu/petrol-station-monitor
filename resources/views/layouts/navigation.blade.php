@@ -16,17 +16,17 @@
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                    <a class="nav-link {{ request()->routeIs('dashboard') ? 'active fw-bold' : '' }}" href="{{ route('dashboard') }}">
                         <i class="fas fa-tachometer-alt me-2"></i>Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('fuel-tanks.*') ? 'active' : '' }}" href="{{ route('fuel-tanks.index') }}">
+                    <a class="nav-link {{ request()->routeIs('fuel-tanks.*') ? 'active fw-bold' : '' }}" href="{{ route('fuel-tanks.index') }}">
                         <i class="fas fa-gas-pump me-2"></i>Fuel Tanks
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('analytics') ? 'active' : '' }}" href="{{ route('analytics') }}">
+                    <a class="nav-link {{ request()->routeIs('analytics') ? 'active fw-bold' : '' }}" href="{{ route('analytics') }}">
                         <i class="fas fa-chart-line me-2"></i>Analytics
                     </a>
                 </li>
@@ -36,11 +36,12 @@
             <ul class="navbar-nav">
                 @auth
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-circle me-2"></i>{{ Auth::user()->name }}
+                            <i class="fas fa-user-circle me-2"></i>
+                            <span>{{ Auth::user()->name }}</span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="navbarDropdown">
                             <li>
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                     <i class="fas fa-user-cog me-2"></i>Profile Settings
@@ -51,7 +52,7 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit" class="dropdown-item text-danger">
-                                        <i class="fas fa-sign-out-alt me-2"></i>Logout
+                                        <i class="fas fa-sign-out-alt me-2"></i>Log Out
                                     </button>
                                 </form>
                             </li>

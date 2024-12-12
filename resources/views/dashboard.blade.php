@@ -5,42 +5,42 @@
     <div class="row g-3 my-2">
         <!-- Overview Cards -->
         <div class="col-md-4">
-            <div class="card bg-primary text-white h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h6 class="fs-6 fw-light">Total Sales Today</h6>
-                            <h3 class="mb-0">Ksh {{ number_format($totalSales, 2) }}</h3>
-                        </div>
-                        <i class="fas fa-cash-register fs-1 opacity-75"></i>
+            <div class="p-card h-100">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-block text-uppercase fs-sm fw-semibold text-muted mb-1">Total Sales Today</span>
+                        <span class="d-block fs-4 fw-bold text-dark mb-1">Ksh {{ number_format($totalSales, 2) }}</span>
+                    </div>
+                    <div class="p-card-icon bg-primary-soft">
+                        <i class="fas fa-cash-register"></i>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card bg-success text-white h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h6 class="fs-6 fw-light">Deliveries Today</h6>
-                            <h3 class="mb-0">{{ $totalDeliveries }}</h3>
-                        </div>
-                        <i class="fas fa-truck-moving fs-1 opacity-75"></i>
+            <div class="p-card h-100">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-block text-uppercase fs-sm fw-semibold text-muted mb-1">Deliveries Today</span>
+                        <span class="d-block fs-4 fw-bold text-dark mb-1">{{ $totalDeliveries }}</span>
+                    </div>
+                    <div class="p-card-icon bg-success-soft">
+                        <i class="fas fa-truck-moving"></i>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card bg-info text-white h-100">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h6 class="fs-6 fw-light">Active Tanks</h6>
-                            <h3 class="mb-0">{{ $activeTanks }}</h3>
-                        </div>
-                        <i class="fas fa-gas-pump fs-1 opacity-75"></i>
+            <div class="p-card h-100">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-block text-uppercase fs-sm fw-semibold text-muted mb-1">Active Tanks</span>
+                        <span class="d-block fs-4 fw-bold text-dark mb-1">{{ $activeTanks }}</span>
+                    </div>
+                    <div class="p-card-icon bg-info-soft">
+                        <i class="fas fa-gas-pump"></i>
                     </div>
                 </div>
             </div>
@@ -344,6 +344,32 @@
     }
     .table th i {
         color: #6c757d;
+    }
+    .p-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .p-card-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 18px;
+        color: #fff;
+    }
+    .bg-primary-soft {
+        background-color: #cce5ff;
+    }
+    .bg-success-soft {
+        background-color: #c6efce;
+    }
+    .bg-info-soft {
+        background-color: #cff5ff;
     }
 </style>
 @endpush

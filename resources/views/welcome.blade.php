@@ -21,21 +21,23 @@
                                 <span class="text-xl font-semibold text-gray-900 dark:text-white">{{ config('app.name', 'Petrol Station Monitor') }}</span>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            @auth
-                                <a href="{{ url('/dashboard') }}" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2">Dashboard</a>
-                                <form method="POST" action="{{ route('logout') }}" class="inline">
-                                    @csrf
-                                    <button type="submit" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2">
-                                        Logout
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ route('login') }}" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2">Login</a>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ml-4 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 px-3 py-2">Register</a>
-                                @endif
-                            @endauth
+                        <div class="flex items-center space-x-4">
+                            @if (Route::has('login'))
+                                @auth
+                                    <a href="{{ url('/dashboard') }}" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2">Dashboard</a>
+                                    <form method="POST" action="{{ route('logout') }}" class="inline">
+                                        @csrf
+                                        <button type="submit" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2">
+                                            Logout
+                                        </button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('login') }}" class="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white px-3 py-2 font-semibold">Login</a>
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold">Register</a>
+                                    @endif
+                                @endauth
+                            @endif
                         </div>
                     </div>
                 </div>
