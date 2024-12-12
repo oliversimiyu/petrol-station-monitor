@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand" href="{{ route('dashboard') }}">
+        <a class="navbar-brand" href="{{ url('/') }}">
             <i class="fas fa-gas-pump text-primary"></i>
             <span>Petrol Station Monitor</span>
         </a>

@@ -17,8 +17,10 @@
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <div class="flex-shrink-0 flex items-center">
-                                <i class="fas fa-gas-pump text-blue-600 text-2xl mr-2"></i>
-                                <span class="text-xl font-semibold text-gray-900 dark:text-white">{{ config('app.name', 'Petrol Station Monitor') }}</span>
+                                <a href="{{ url('/') }}" class="flex items-center">
+                                    <i class="fas fa-gas-pump text-blue-600 text-2xl mr-2"></i>
+                                    <span class="text-xl font-semibold text-gray-900 dark:text-white">{{ config('app.name', 'Petrol Station Monitor') }}</span>
+                                </a>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
