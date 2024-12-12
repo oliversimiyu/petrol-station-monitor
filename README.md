@@ -1,6 +1,16 @@
 # Petrol Station Monitor
 
-A comprehensive web application for monitoring and managing petrol station operations. Built with Laravel, this system helps station managers track fuel levels, sales, and deliveries while providing insightful analytics.
+A comprehensive web application for monitoring and managing petrol station operations. Built with Laravel 11, this system helps station managers track fuel levels, sales, and deliveries while providing insightful analytics.
+
+## Technology Stack
+
+- **Backend Framework**: Laravel 11.31
+- **Frontend**: 
+  - Laravel Blade Templates
+  - Bootstrap CSS Framework
+  - JavaScript/jQuery
+- **Database**: SQLite/MySQL
+- **Authentication**: Laravel UI
 
 ## Features
 
